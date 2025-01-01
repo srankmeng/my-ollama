@@ -1,5 +1,48 @@
 # My ollama
 
+- [ollama](https://github.com/ollama/ollama)
+- Start ollama:
+  - [Work with installer terminal](#run-ollama-with-os-installer)
+  - [Work with docker compose](#run-ollama-with-docker-compose)
+
+## Run ollama with OS installer
+
+  1. Download & install ollama depend OS: <https://ollama.com/download>
+
+  2. Checking ollama: `ollama --help`
+
+  3. Pull model: `ollama pull llama3.2`
+
+  4. Check model list: open `ollama list`
+
+  5. Run model: open `ollama run llama3.2`
+
+  6. Try working:
+
+     ```sh
+     >>> ประเทศไทยมีกี่จังหวัด
+     ```
+
+     It should return something.
+
+  7. Exit from model: type `/bye`
+
+     ```sh
+     >>> /bye
+     ```
+
+  8. You can also work with API: <https://github.com/ollama/ollama/blob/main/docs/api.md>
+
+     For example:
+
+     ```sh
+     curl http://localhost:11434/api/generate -d '{
+       "model": "llama3.2",
+       "prompt": "ประเทศไทยมีกี่จังหวัด",
+       "stream": false
+     }'
+     ```
+
 ## Run ollama with docker compose
 
   1. Build and run ollama with docker-compose by running:
@@ -15,7 +58,7 @@
 
      ```sh
      curl http://localhost:11434/api/pull -d '{
-       "model": "llama3.3",
+       "model": "llama3.2",
        "stream": false
      }'
      ```
@@ -25,7 +68,7 @@
 
      ```sh
      curl http://localhost:11434/api/generate -d '{
-       "model": "llama3.3",
+       "model": "llama3.2",
        "prompt": "ประเทศไทยมีกี่จังหวัด",
        "stream": false
      }'
