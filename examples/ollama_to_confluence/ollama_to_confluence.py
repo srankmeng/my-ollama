@@ -49,7 +49,7 @@ def parse_response(response):
 def generate_content(user_prompt):
   template = (
     "You are a senior software architect at a technology company. You have just received a feature request for {user_prompt}. "
-    "Your task is to perform a detailed spike on this request, considering its technical feasibility, architectural impact, and potential risks. "
+    "Your task is to perform a detailed analysis on this request, considering its technical feasibility, architectural impact, and potential risks. "
     "You will evaluate the following aspects:\n\n" 
     "High-Level Overview: Provide a summary of the feature and its business value.\n"
     "Architectural Impact: Analyze the impact of the feature on the architecture of the system.\n"
@@ -69,15 +69,6 @@ response = generate_content(user_prompt)
 
 # Parse the generated content
 title, description, body = parse_response(response)
-
-print('titletitletitletitletitletitletitle')
-print(title)
-
-print('descriptiondescriptiondescriptiondescription')
-print(description)
-
-print('bodybodybodybodybodybodybodybodybody')
-print(body)
 
 # Create the Confluence page
 create_confluence_page(title, description, body)
